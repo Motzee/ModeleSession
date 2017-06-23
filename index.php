@@ -48,7 +48,8 @@
                     $nouveauMembre = new Membre($pseudo, "user", $sel, $mdpHashe) ;
                     
                     //ajout de l'objet nouveau membre dans la liste actuelle JSON
-                    ajoutMembreDansJSON($ide, $nouveauMembre) ;
+                    
+                    $nouveauMembre->inscription($ide, $nouveauMembre) ;
 
                     //chargement d'une session
                     chargeSession($ide) ;

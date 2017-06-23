@@ -37,16 +37,9 @@ function getMembre($identifiant) {
     return $membre ;
 }
 
-//ajout d'un objet membre dans la liste récupérée et restockée
-function ajoutMembreDansJSON($identifiant, $objProfil) {
-    $listeActuelle = recupListeMembres() ;
-    $listeActuelle->{$identifiant} = $objProfil ;
-    $nouvelleListe = json_encode($listeActuelle, JSON_PRETTY_PRINT);
-    ecritureDansJSON($nouvelleListe) ;
-}
-
 //Ecriture d'une liste de membres dans le fichier JSON
 function ecritureDansJSON($nouvelleListe) {
+    $nouvelleListe = json_encode($nouvelleListe, JSON_PRETTY_PRINT);
     $fichier = ouvrirListeMembres() ;
     fwrite($fichier, $nouvelleListe) ;
     fclose($fichier) ;
@@ -79,5 +72,8 @@ function checkMDP($identifiant, $mdp) {
 
 function chargeSession($identifiant) {
     $_SESSION['identifiant'] = $identifiant ;
+    header('Location:index.php') ;
+    http_response_code(200);
+    exit ;
 }
 

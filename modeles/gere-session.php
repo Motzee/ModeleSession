@@ -1,8 +1,5 @@
 <?php
 
-
-
-
 if(isset($_SESSION['identifiant']) && $_SESSION['identifiant'] != null && checkExisteMembre($_SESSION['identifiant'])) {
     //on crée un objet issu de ses données
     $identifiant = $_SESSION['identifiant'] ;

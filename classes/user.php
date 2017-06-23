@@ -79,8 +79,6 @@ class User implements JsonSerializable {
 
         unset($membres->{$ide}) ;
 
-        $membres = json_encode($membres, JSON_PRETTY_PRINT);
-
         ecritureDansJSON($membres) ;
 
         $this -> deconnexion() ;

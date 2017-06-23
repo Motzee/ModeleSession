@@ -70,7 +70,13 @@ class Membre implements JsonSerializable {
         ] ;
     }
 
-    public function inscription() {
-        
+    public function inscription($identifiant, $objProfil) {
+        //récupérer la liste des membres et en faire un objet
+        $listeMembres = recupListeMembres() ;
+        $listeMembres->{$identifiant} = $objProfil ;
+
+        ecritureDansJSON($listeMembres) ;
+
     }
+
 }

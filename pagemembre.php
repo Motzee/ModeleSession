@@ -12,7 +12,7 @@
     //Si aucune session n'est lancée, on retourne à l'index
     
     if(!autoriseAccesUser($identifiant, "user")) {
-        //header('Location:index.php') ;
+        header('Location:index.php') ;
         http_response_code(200);
         exit ;
     } else {
