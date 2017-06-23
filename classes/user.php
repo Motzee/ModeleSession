@@ -4,6 +4,7 @@ class User implements JsonSerializable {
     protected $pseudo ;
     private $_statut ;
     protected $dateInscription ;
+    
 
     //fonction constructrice
     public function __construct($ide, $pseudo, $dateInscript) {

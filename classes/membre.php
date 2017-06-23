@@ -79,4 +79,8 @@ class Membre implements JsonSerializable {
 
     }
 
+    public function identification() {
+        
+    }
+
 }
